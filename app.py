@@ -1,10 +1,23 @@
-from flask import Flask
+from flask import Flask, request, jsonify
+
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return 'Hello from Koyeb'
+data = {
+    "animals": [
+        {
+            "name": "dog",
+            "sound": "bark"
+        },
+        {
+            "name": "cat",
+            "sound": "meow"
+        }
+    ]
+}
 
+@app.route('/animals', methods=['GET'])
+def get_animals():
+    return jsonify(data), 200
 
-if __name__ == "__main__":
-    app.run()
+if __name__ == '__main__':
+    app.run(debug=True)
