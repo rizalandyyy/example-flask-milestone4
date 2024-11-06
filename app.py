@@ -10,7 +10,7 @@ data = {
         },
         {
             "name": "cat",
-            "sound": "meow"
+            "sound": "meow meow"
         }
     ]
 }
